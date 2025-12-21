@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horarios Personalizados</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Horarios de estudiantes</h2>
+
+    <label for="estudiante">Nombre del estudiante:</label>
+    <input id="estudiante" type="text" autocomplete="off" placeholder="Ingresa el nombre">
+
+<div id="sugerencias" class="sugerencias"></div>
+
+    <h3>Selecciona las asignaturas:</h3>
+    <div id="listaMaterias"></div>
+
+    <div class="botones">
+        <button class="btn-verde" onclick="generarHorario()">Generar horario</button>
+        <button class="btn-amarillo" onclick="deseleccionarAsignaturas()">Deseleccionar asignaturas</button>
+        <button class="btn-rojo" onclick="limpiar()">Limpiar</button>
+    </div>
+
+    <div id="resultado"></div>
+    <div id="horario-estudiante"></div>
+    <button id="guardarHorario" style="display:none;">
+  Guardar horario
+</button>
+
+
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

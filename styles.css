@@ -1,0 +1,164 @@
+/* ------ Estilo general ------ */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 30px;
+  color: #333;
+}
+
+/* Contenedor central */
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+/* Títulos */
+h2, h3 {
+  color: #222;
+}
+
+/* Inputs de texto */
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Materias con checkbox */
+#listaMaterias div {
+  padding: 6px 0;
+  font-size: 16px;
+}
+
+/* ------ Botones ------ */
+.botones {
+  margin: 20px 0;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 12px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Botón verde */
+.btn-verde {
+  background-color: #90C541;
+}
+
+/* Botón amarillo */
+.btn-amarillo {
+  background-color: #FBC85D;
+}
+
+/* Botón rojo */
+.btn-rojo {
+  background-color: #F25C54;
+}
+
+/* Hover suave */
+button:hover {
+  opacity: 0.9;
+}
+
+/* Resultado */
+#resultado {
+  margin-top: 25px;
+  padding: 18px;
+  border-radius: 10px;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.sugerencias {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-height: 160px;
+  overflow-y: auto;
+  max-width: 700px;
+  z-index: 10;
+}
+
+.sugerencias div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sugerencias div:hover {
+  background-color: #FBC85D;
+}
+
+.sugerencias div.activa {
+  background-color: #90C541;
+  color: #fff;
+}
+
+/* ===== Horario semanal ===== */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+  background-color: white;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+th {
+  background-color: #FBC85D;
+}
+
+td.materia {
+  background-color: #90C541;
+  color: white;
+  font-weight: bold;
+}
+
+tr.merienda td {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: center;
+  border-top: 2px solid #999;
+  border-bottom: 2px solid #999;
+}
+
+.merienda-celda {
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+#guardarHorario {
+  margin-top: 15px;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.encabezado-estudiante td {
+  background-color: #000000;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+  padding: 10px;
+  font-size: 1rem;
+}
