@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horarios Personalizados</title>
+    <title>Generación de horarios personalizados</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <body>
 
 <div class="container">
 
-    <h2>Horarios de estudiantes</h2>
+    <h2>Generación de horarios de estudiantes</h2>
 
     <label for="estudiante">Nombre del estudiante:</label>
     <input id="estudiante" type="text" autocomplete="off" placeholder="Ingresa el nombre">
@@ -32,6 +33,9 @@
   Guardar horario
 </button>
 
+<button id="guardarImagen" style="display:none;">
+  Guardar como imagen
+</button>
 
 
 </div>

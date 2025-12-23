@@ -122,6 +122,7 @@ ultimoEstudiante = estudiante;
 
 // Mostrar botón guardar
 document.getElementById("guardarHorario").style.display = "inline-block";
+document.getElementById("guardarImagen").style.display = "inline-block";
 }
 
 // Limpiar datos
@@ -132,6 +133,7 @@ function limpiar() {
   document.getElementById("resultado").style.display = "none";
   document.getElementById("guardarHorario").style.display = "none";
   document.getElementById("horario-estudiante").innerHTML = "";
+  document.getElementById("guardarImagen").style.display = "none";
 }
 
 // Deseleccionar asignaturas
@@ -297,7 +299,8 @@ document.getElementById("guardarHorario").addEventListener("click", () => {
   const horariosGuardados =
     JSON.parse(localStorage.getItem("horariosEstudiantes")) || {};
 
-  horariosGuardados[ultimoEstudiante] = ultimoHorario;
+  const nombreSinTildes = quitarTildes(ultimoEstudiante);
+horariosGuardados[nombreSinTildes] = ultimoHorario;
 
   localStorage.setItem(
     "horariosEstudiantes",
@@ -306,3 +309,30 @@ document.getElementById("guardarHorario").addEventListener("click", () => {
 
   alert(`Horario de ${ultimoEstudiante} guardado correctamente`);
 });
+
+document.getElementById("guardarImagen").addEventListener("click", () => {
+  const contenedor = document.getElementById("horario-estudiante");
+
+  if (!contenedor) return;
+
+  html2canvas(contenedor, {
+    scale: 2,          // mejora calidad
+    backgroundColor: "#ffffff"
+  }).then(canvas => {
+    const link = document.createElement("a");
+    const nombre = quitarTildes(ultimoEstudiante)
+  .replace(/\s+/g, "_")
+  .toLowerCase();
+
+
+    link.download = `horario_${nombre}.jpg`;
+    link.href = canvas.toDataURL("image/jpeg", 0.95);
+    link.click();
+  });
+});
+
+function quitarTildes(texto) {
+  return texto
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
