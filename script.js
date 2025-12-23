@@ -121,7 +121,7 @@ ultimoHorario = horarioFinal;
 ultimoEstudiante = estudiante;
 
 // Mostrar botón guardar
-document.getElementById("guardarHorario").style.display = "inline-block";
+document.getElementById("guardarHorario").style.display = "none";
 document.getElementById("guardarImagen").style.display = "inline-block";
 }
 

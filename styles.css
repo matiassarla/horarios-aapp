@@ -148,7 +148,7 @@ tr.merienda td {
   letter-spacing: 1px;
 }
 
-#guardarHorario {
+#guardarHorario, #guardarImagen {
   margin-top: 15px;
   background-color: #4CAF50;
   color: white;
