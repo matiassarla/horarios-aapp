@@ -14,7 +14,7 @@ const HORAS_TURNO = [
 
 // Base de datos de materias a modo de ejemplo (puede venir de JSON externo después)
 const data = { materias: [] };
-const urlAPI = "https://script.google.com/macros/s/AKfycbzLCQGL5xhBGqJJCS6PnSW2YU2xZ2AtfdsC4W4JGlpp9uv6nLIhR8gWPH_E2sHfuX_t/exec";
+const urlAPI = "https://script.google.com/macros/s/AKfycbyx3IIZxcEIwzECUtWyUetWUa1Uo5nj961Dz0pZmqNZ3PYvtn3nHrPnJ1dim3y_X_IV/exec";
 
 let indiceActivo = -1;
 
