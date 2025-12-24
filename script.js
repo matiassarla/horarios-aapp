@@ -14,7 +14,7 @@ const HORAS_TURNO = [
 
 // Base de datos de materias a modo de ejemplo (puede venir de JSON externo después)
 const data = { materias: [] };
-const urlAPI = "https://script.google.com/macros/s/AKfycbwyocxF5Vd8BMHRDn8MbSlvcXF4q1hkFK6xRGgOYTMFVkgpkI5IVlIC6DNJDB-IGDk6/exec";
+const urlAPI = "https://script.google.com/macros/s/AKfycbzLCQGL5xhBGqJJCS6PnSW2YU2xZ2AtfdsC4W4JGlpp9uv6nLIhR8gWPH_E2sHfuX_t/exec";
 
 let indiceActivo = -1;
 
@@ -43,14 +43,14 @@ fetch(urlAPI)
 // Ocultar caja de resultados hasta que se genere horario
 document.getElementById("resultado").style.display = "none";
 
-// // Cuando haya un resultado, mostrar la caja
-// const observer = new MutationObserver(() => {
-//   const resultado = document.getElementById("resultado");
-//   if (resultado.innerHTML.trim() !== "") {
-//     resultado.style.display = "block";
-//   }
-// });
-// observer.observe(document.getElementById("resultado"), { childList: true, subtree: true });
+// Cuando haya un resultado, mostrar la caja
+const observer = new MutationObserver(() => {
+  const resultado = document.getElementById("resultado");
+  if (resultado.innerHTML.trim() !== "") {
+    resultado.style.display = "block";
+  }
+});
+observer.observe(document.getElementById("resultado"), { childList: true, subtree: true });
 
 // Generar horario
 function generarHorario() {
@@ -96,16 +96,18 @@ function generarHorario() {
 
     resultado.textContent =
       `No es posible que ${estudiante} curse todas las asignaturas seleccionadas ya que ${listaChoques}.`;
+      document.getElementById("horario-estudiante").style.display = "none";
+      document.getElementById("guardarImagen").style.display = "none";
     return;
   }
 
   // Si no hay choques → mostrar horario
-  let html = `<h3>Horario de ${estudiante}</h3>`;
-  materiasSel.forEach(m => {
-    html += `<p><strong>${m.nombre}</strong>: ${m.horarios.join(", ")}</p>`;
-  });
+  // let html = `<h3>Horario de ${estudiante}</h3>`;
+  // materiasSel.forEach(m => {
+  //   html += `<p><strong>${m.nombre}</strong>: ${m.horarios.join(", ")}</p>`;
+  // });
 
-  resultado.innerHTML = html;
+  // resultado.innerHTML = html;
 
 const horarioFinal = materiasSel.flatMap(m =>
   m.horarios.map(h => ({
